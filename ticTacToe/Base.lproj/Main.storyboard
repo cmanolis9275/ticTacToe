@@ -152,6 +152,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="box1" destination="L9o-1P-U33" id="xfU-hV-jVE"/>
+                        <outlet property="box2" destination="AhB-UA-xJh" id="lrO-zH-5rc"/>
+                        <outlet property="box3" destination="WAe-1E-DdG" id="N0u-Bz-e8e"/>
+                        <outlet property="box4" destination="AfH-pA-JmH" id="WNw-kd-s1g"/>
+                        <outlet property="box5" destination="UW3-pt-APf" id="M6N-nU-gNa"/>
+                        <outlet property="box6" destination="8D0-Iw-UUT" id="yLf-Xp-nCW"/>
+                        <outlet property="box7" destination="iec-xK-vBR" id="a80-Z7-5O7"/>
+                        <outlet property="box8" destination="iec-xK-vBR" id="zoE-Hb-leX"/>
+                        <outlet property="box9" destination="AmS-pF-76r" id="GaT-bS-LQR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
