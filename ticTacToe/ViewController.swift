@@ -22,15 +22,15 @@ class ViewController: UIViewController
     @IBOutlet weak var box9: UIButton!
 
 
-    var isBox1AnX = true
-    var isBox2AnX = true
-    var isBox3AnX = true
-    var isBox4AnX = true
-    var isBox5AnX = true
-    var isBox6AnX = true
-    var isBox7AnX = true
-    var isBox8AnX = true
-    var isBox9AnX = true
+    var box1State = 0
+    var box2State = 0
+    var box3State = 0
+    var box4State = 0
+    var box5State = 0
+    var box6State = 0
+    var box7State = 0
+    var box8State = 0
+    var box9State = 0
 
     override func viewDidLoad()
     {
@@ -52,18 +52,23 @@ class ViewController: UIViewController
     }
     @IBAction func onBox1Tapped(sender: AnyObject)
     {
-        if isBox1AnX == true
+        if box1State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box1.setImage(defaultImage, forState: .Normal)
+        }
+        else if box1State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
             box1.setImage(image, forState: .Normal)
-            isBox1AnX = false
+            box1State = 2
             victoryCheck()
         }
-        else if isBox1AnX == false
+        else if box1State == 2
         {
             let image = UIImage(named: "X")
             box1.setImage(image, forState: .Normal)
-            isBox1AnX = true
+            box1State = 1
             victoryCheck()
         }
         print("Box 1 Tapped")
@@ -71,133 +76,161 @@ class ViewController: UIViewController
     @IBAction func onBox2Tapped(sender: AnyObject)
     {
         
-        if isBox2AnX == true
+        if box2State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box2.setImage(defaultImage, forState: .Normal)
+        }
+        else if box2State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
             box2.setImage(image, forState: .Normal)
-            isBox2AnX = false
-            
+            box2State = 2
+            victoryCheck()
         }
-        else if isBox2AnX == false
+        else if box2State == 2
         {
             let image = UIImage(named: "X")
             box2.setImage(image, forState: .Normal)
-            isBox2AnX = true
+            box2State = 1
+            victoryCheck()
         }
         print("Box 2 Tapped")
-        victoryCheck()
+
     }
     
     @IBAction func onBox3Tapped(sender: AnyObject)
     {
-        if isBox3AnX == true
+        if box3State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box3.setImage(defaultImage, forState: .Normal)
+        }
+        else if box3State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
             box3.setImage(image, forState: .Normal)
-            isBox3AnX = false
+            box3State = 2
+            victoryCheck()
         }
-        else if isBox3AnX == false
+        else if box3State == 2
         {
             let image = UIImage(named: "X")
             box3.setImage(image, forState: .Normal)
-            isBox3AnX = true
+            box3State = 1
+            victoryCheck()
         }
         print("Box 3 Tapped")
-        victoryCheck()
+
     }
     
     @IBAction func onBox4Tapped(sender: AnyObject)
     {
-        if isBox4AnX == true
+
+        if box4State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box4.setImage(defaultImage, forState: .Normal)
+        }
+        else if box4State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
             box4.setImage(image, forState: .Normal)
-            isBox4AnX = false
+            box4State = 2
+            victoryCheck()
         }
-        else if isBox3AnX == false
+        else if box4State == 2
         {
             let image = UIImage(named: "X")
             box4.setImage(image, forState: .Normal)
-            isBox4AnX = true
+            box4State = 1
+            victoryCheck()
         }
         print("Box 4 Tapped")
-        victoryCheck()
+
 
     }
    
     @IBAction func onBox5Tapped(sender: AnyObject)
     {
-        if isBox5AnX == true
+        if box5State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box5.setImage(defaultImage, forState: .Normal)
+        }
+        else if box5State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
             box5.setImage(image, forState: .Normal)
-            isBox5AnX = false
+            box5State = 2
+            victoryCheck()
         }
-        else if isBox5AnX == false
+        else if box5State == 2
         {
             let image = UIImage(named: "X")
             box5.setImage(image, forState: .Normal)
-            isBox5AnX = true
+            box5State = 1
+            victoryCheck()
         }
         print("Box 5 Tapped")
-        victoryCheck()
 
     }
     
     @IBAction func onBox6Tapped(sender: AnyObject)
     {
-        if isBox6AnX == true
+        
+        if box6State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box6.setImage(defaultImage, forState: .Normal)
+        }
+        else if box6State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
             box6.setImage(image, forState: .Normal)
-            isBox6AnX = false
+            box6State = 2
+            victoryCheck()
         }
-        else if isBox6AnX == false
+        else if box6State == 2
         {
             let image = UIImage(named: "X")
             box6.setImage(image, forState: .Normal)
-            isBox6AnX = true
+            box6State = 1
+            victoryCheck()
         }
         print("Box 6 Tapped")
-        victoryCheck()
 
     }
    
     @IBAction func onBox7Tapped(sender: AnyObject)
     {
-        if isBox7AnX == true
+        if box7State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box7.setImage(defaultImage, forState: .Normal)
+        }
+        else if box7State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
             box7.setImage(image, forState: .Normal)
-            isBox7AnX = false
+            box7State = 2
+            victoryCheck()
         }
-        else if isBox7AnX == false
+        else if box7State == 2
         {
             let image = UIImage(named: "X")
             box7.setImage(image, forState: .Normal)
-            isBox7AnX = true
+            box7State = 1
+            victoryCheck()
         }
         print("Box 7 Tapped")
-        victoryCheck()
+
 
     }
     
     @IBAction func onBox8Tapped(sender: AnyObject)
     {
-        if isBox8AnX == true
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box8.setImage(image, forState: .Normal)
-            isBox8AnX = false
-        }
-        else if isBox8AnX == false
-        {
-            let image = UIImage(named: "X")
-            box8.setImage(image, forState: .Normal)
-            isBox8AnX = true
-        }
-        print("Box 8 Tapped")
-        victoryCheck()
+        
     }
     
     @IBAction func onBox9Tapped(sender: AnyObject)
