@@ -45,78 +45,96 @@
                                     <rect key="frame" x="10" y="257" width="780" height="6"/>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9o-1P-U33">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS3-mf-mue">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="4" y="44" width="252" height="224"/>
+                                    <rect key="frame" x="618" y="81" width="182" height="128"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhB-UA-xJh">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NvK-uP-6Bd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udN-Xc-dcd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="297" y="39" width="252" height="224"/>
+                                    <rect key="frame" x="359" y="312" width="186" height="148"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAe-1E-DdG">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox5Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9rX-0p-9K3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oax-hg-fb8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="581" y="44" width="252" height="224"/>
+                                    <rect key="frame" x="629" y="322" width="182" height="128"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8D0-Iw-UUT">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox6Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNl-LH-e3U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-Zk-SAO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="581" y="271" width="252" height="224"/>
+                                    <rect key="frame" x="56" y="595" width="182" height="128"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-pt-APf">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox7Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gs-08-Xb1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCY-QU-rke">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="297" y="271" width="252" height="224"/>
+                                    <rect key="frame" x="347" y="595" width="182" height="128"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfH-pA-JmH">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox8Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7I-Gu-TUS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMD-2Y-deR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="4" y="271" width="252" height="224"/>
+                                    <rect key="frame" x="618" y="595" width="182" height="128"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIN-ew-832">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox9Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNS-CN-9O1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S37-xw-N8H">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="4" y="535" width="252" height="224"/>
+                                    <rect key="frame" x="61" y="50" width="127" height="159"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iec-xK-vBR">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xop-7d-9Kl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5n-nW-0jc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="297" y="535" width="252" height="224"/>
+                                    <rect key="frame" x="56" y="322" width="182" height="128"/>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmS-pF-76r">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="199"/>
-                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <action selector="onBox4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdn-6I-dcA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8g-Nu-M5B">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button" image="X"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="581" y="535" width="252" height="224"/>
+                                    <rect key="frame" x="370" y="55" width="136" height="149"/>
                                 </variation>
-                            </label>
+                                <connections>
+                                    <action selector="onBox2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LhP-7E-kO1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -124,15 +142,15 @@
                                 <exclude reference="jFg-FC-FJA"/>
                                 <exclude reference="VGA-8F-R7M"/>
                                 <exclude reference="L0e-sC-Qp6"/>
-                                <exclude reference="L9o-1P-U33"/>
-                                <exclude reference="AhB-UA-xJh"/>
-                                <exclude reference="WAe-1E-DdG"/>
-                                <exclude reference="8D0-Iw-UUT"/>
-                                <exclude reference="UW3-pt-APf"/>
-                                <exclude reference="AfH-pA-JmH"/>
-                                <exclude reference="QIN-ew-832"/>
-                                <exclude reference="iec-xK-vBR"/>
-                                <exclude reference="AmS-pF-76r"/>
+                                <exclude reference="aS3-mf-mue"/>
+                                <exclude reference="udN-Xc-dcd"/>
+                                <exclude reference="Oax-hg-fb8"/>
+                                <exclude reference="JkM-Zk-SAO"/>
+                                <exclude reference="HCY-QU-rke"/>
+                                <exclude reference="EMD-2Y-deR"/>
+                                <exclude reference="S37-xw-N8H"/>
+                                <exclude reference="n5n-nW-0jc"/>
+                                <exclude reference="j8g-Nu-M5B"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -140,33 +158,46 @@
                                 <include reference="jFg-FC-FJA"/>
                                 <include reference="VGA-8F-R7M"/>
                                 <include reference="L0e-sC-Qp6"/>
-                                <include reference="L9o-1P-U33"/>
-                                <include reference="AhB-UA-xJh"/>
-                                <include reference="WAe-1E-DdG"/>
-                                <include reference="8D0-Iw-UUT"/>
-                                <include reference="UW3-pt-APf"/>
-                                <include reference="AfH-pA-JmH"/>
-                                <include reference="QIN-ew-832"/>
-                                <include reference="iec-xK-vBR"/>
-                                <include reference="AmS-pF-76r"/>
+                                <include reference="aS3-mf-mue"/>
+                                <include reference="udN-Xc-dcd"/>
+                                <include reference="Oax-hg-fb8"/>
+                                <include reference="JkM-Zk-SAO"/>
+                                <include reference="HCY-QU-rke"/>
+                                <include reference="EMD-2Y-deR"/>
+                                <include reference="S37-xw-N8H"/>
+                                <include reference="n5n-nW-0jc"/>
+                                <include reference="j8g-Nu-M5B"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="box1" destination="L9o-1P-U33" id="xfU-hV-jVE"/>
-                        <outlet property="box2" destination="AhB-UA-xJh" id="lrO-zH-5rc"/>
-                        <outlet property="box3" destination="WAe-1E-DdG" id="N0u-Bz-e8e"/>
-                        <outlet property="box4" destination="AfH-pA-JmH" id="WNw-kd-s1g"/>
-                        <outlet property="box5" destination="UW3-pt-APf" id="M6N-nU-gNa"/>
-                        <outlet property="box6" destination="8D0-Iw-UUT" id="yLf-Xp-nCW"/>
-                        <outlet property="box7" destination="iec-xK-vBR" id="a80-Z7-5O7"/>
-                        <outlet property="box8" destination="iec-xK-vBR" id="zoE-Hb-leX"/>
-                        <outlet property="box9" destination="AmS-pF-76r" id="GaT-bS-LQR"/>
+                        <outlet property="box1" destination="S37-xw-N8H" id="kic-Yo-YE8"/>
+                        <outlet property="box2" destination="j8g-Nu-M5B" id="eTv-0M-dEi"/>
+                        <outlet property="box3" destination="aS3-mf-mue" id="bZs-rd-85A"/>
+                        <outlet property="box4" destination="n5n-nW-0jc" id="EBr-KL-hou"/>
+                        <outlet property="box5" destination="udN-Xc-dcd" id="GEX-37-RGn"/>
+                        <outlet property="box6" destination="Oax-hg-fb8" id="DiN-m5-NcX"/>
+                        <outlet property="box7" destination="JkM-Zk-SAO" id="ETy-ft-Q8e"/>
+                        <outlet property="box8" destination="HCY-QU-rke" id="Yhy-zE-twE"/>
+                        <outlet property="box9" destination="EMD-2Y-deR" id="QJp-mE-bwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uv1-dh-Nur">
+                    <connections>
+                        <action selector="box1Tap:" destination="BYZ-38-t0r" id="Bnl-3e-OX7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="qLn-RL-B2g">
+                    <connections>
+                        <action selector="onBox8Pan:" destination="BYZ-38-t0r" id="p88-JY-JFh"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="324.75" y="399.75"/>
+            <point key="canvasLocation" x="137.25" y="416.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="X" width="128" height="128"/>
+    </resources>
 </document>
