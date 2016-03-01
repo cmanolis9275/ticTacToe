@@ -37,7 +37,18 @@ class ViewController: UIViewController
        
         super.viewDidLoad()
         let defaultImage = UIImage(named: "Empty")
-        box1.setImage(defaultImage, forState: <#T##UIControlState#>)
+        box1.setImage(defaultImage, forState: .Normal)
+        box2.setImage(defaultImage, forState: .Normal)
+        box3.setImage(defaultImage, forState: .Normal)
+        box4.setImage(defaultImage, forState: .Normal)
+        box5.setImage(defaultImage, forState: .Normal)
+        box6.setImage(defaultImage, forState: .Normal)
+        box7.setImage(defaultImage, forState: .Normal)
+        box8.setImage(defaultImage, forState: .Normal)
+        box9.setImage(defaultImage, forState: .Normal)
+        
+      
+
     }
     @IBAction func onBox1Tapped(sender: AnyObject)
     {
@@ -46,12 +57,14 @@ class ViewController: UIViewController
             let image = UIImage(named: "Cyrillic-O")
             box1.setImage(image, forState: .Normal)
             isBox1AnX = false
+            victoryCheck()
         }
         else if isBox1AnX == false
         {
             let image = UIImage(named: "X")
             box1.setImage(image, forState: .Normal)
             isBox1AnX = true
+            victoryCheck()
         }
         print("Box 1 Tapped")
     }
@@ -63,6 +76,7 @@ class ViewController: UIViewController
             let image = UIImage(named: "Cyrillic-O")
             box2.setImage(image, forState: .Normal)
             isBox2AnX = false
+            
         }
         else if isBox2AnX == false
         {
@@ -71,6 +85,7 @@ class ViewController: UIViewController
             isBox2AnX = true
         }
         print("Box 2 Tapped")
+        victoryCheck()
     }
     
     @IBAction func onBox3Tapped(sender: AnyObject)
@@ -88,6 +103,7 @@ class ViewController: UIViewController
             isBox3AnX = true
         }
         print("Box 3 Tapped")
+        victoryCheck()
     }
     
     @IBAction func onBox4Tapped(sender: AnyObject)
@@ -105,6 +121,7 @@ class ViewController: UIViewController
             isBox4AnX = true
         }
         print("Box 4 Tapped")
+        victoryCheck()
 
     }
    
@@ -123,6 +140,7 @@ class ViewController: UIViewController
             isBox5AnX = true
         }
         print("Box 5 Tapped")
+        victoryCheck()
 
     }
     
@@ -141,6 +159,7 @@ class ViewController: UIViewController
             isBox6AnX = true
         }
         print("Box 6 Tapped")
+        victoryCheck()
 
     }
    
@@ -159,6 +178,7 @@ class ViewController: UIViewController
             isBox7AnX = true
         }
         print("Box 7 Tapped")
+        victoryCheck()
 
     }
     
@@ -177,6 +197,7 @@ class ViewController: UIViewController
             isBox8AnX = true
         }
         print("Box 8 Tapped")
+        victoryCheck()
     }
     
     @IBAction func onBox9Tapped(sender: AnyObject)
@@ -194,6 +215,7 @@ class ViewController: UIViewController
             isBox9AnX = true
         }
         print("Box 9 Tapped")
+        victoryCheck()
 
     }
     @IBAction func onBox8Pan(sender: UIPanGestureRecognizer)
@@ -202,6 +224,29 @@ class ViewController: UIViewController
         box8.center = point
 
     }
+   
+        func victoryCheck()
+    {
 
+        if isBox1AnX == true && isBox2AnX == true && isBox3AnX == true
+        {
+            let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                {
+                    (action) -> Void in
+                    print("Cancel button pressed")
+                    
+            })
+            let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                {
+                    (action) -> Void in
+                    print("OK Button Pressed")
+                    
+            })
+            alertController1.addAction(cancelAction)
+            alertController1.addAction(OKAction)
+            self.presentViewController(alertController1, animated: true, completion: nil)
+        }
+    }
 }
 
