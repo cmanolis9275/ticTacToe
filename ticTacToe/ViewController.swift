@@ -36,6 +36,8 @@ class ViewController: UIViewController
     {
        
         super.viewDidLoad()
+        let defaultImage = UIImage(named: "Empty")
+        box1.setImage(defaultImage, forState: <#T##UIControlState#>)
     }
     @IBAction func onBox1Tapped(sender: AnyObject)
     {
