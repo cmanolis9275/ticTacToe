@@ -235,20 +235,26 @@ class ViewController: UIViewController
     
     @IBAction func onBox9Tapped(sender: AnyObject)
     {
-        if isBox9AnX == true
+        if box9State == 0
+        {
+            let defaultImage = UIImage(named: "Empty")
+            box7.setImage(defaultImage, forState: .Normal)
+        }
+        else if box7State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
-            box9.setImage(image, forState: .Normal)
-            isBox9AnX = false
+            box7.setImage(image, forState: .Normal)
+            box7State = 2
+            victoryCheck()
         }
-        else if isBox9AnX == false
+        else if box7State == 2
         {
             let image = UIImage(named: "X")
-            box9.setImage(image, forState: .Normal)
-            isBox9AnX = true
+            box7.setImage(image, forState: .Normal)
+            box7State = 1
+            victoryCheck()
         }
-        print("Box 9 Tapped")
-        victoryCheck()
+        print("Box 7 Tapped")
 
     }
     @IBAction func onBox8Pan(sender: UIPanGestureRecognizer)
