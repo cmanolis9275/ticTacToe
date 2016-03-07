@@ -135,6 +135,15 @@
                                     <action selector="onBox9Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNS-CN-9O1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VN6-Kd-StO">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="290" y="764" width="250" height="63"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -151,6 +160,7 @@
                                 <exclude reference="n5n-nW-0jc"/>
                                 <exclude reference="j8g-Nu-M5B"/>
                                 <exclude reference="EMD-2Y-deR"/>
+                                <exclude reference="VN6-Kd-StO"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -167,6 +177,7 @@
                                 <include reference="n5n-nW-0jc"/>
                                 <include reference="j8g-Nu-M5B"/>
                                 <include reference="EMD-2Y-deR"/>
+                                <include reference="VN6-Kd-StO"/>
                             </mask>
                         </variation>
                     </view>
@@ -180,6 +191,7 @@
                         <outlet property="box7" destination="JkM-Zk-SAO" id="ETy-ft-Q8e"/>
                         <outlet property="box8" destination="HCY-QU-rke" id="Yhy-zE-twE"/>
                         <outlet property="box9" destination="EMD-2Y-deR" id="QJp-mE-bwK"/>
+                        <outlet property="turnLabel" destination="VN6-Kd-StO" id="izu-iP-Fuo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -194,7 +206,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137.25" y="416.25"/>
+            <point key="canvasLocation" x="72" y="443.25"/>
         </scene>
     </scenes>
     <resources>

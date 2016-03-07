@@ -20,6 +20,7 @@ class ViewController: UIViewController
     @IBOutlet weak var box7: UIButton!
     @IBOutlet weak var box8: UIButton!
     @IBOutlet weak var box9: UIButton!
+    @IBOutlet weak var turnLabel: UILabel!
 
     //State 0 = Empty
     //State 1 = X
@@ -33,7 +34,12 @@ class ViewController: UIViewController
     var box7State = 0
     var box8State = 0
     var box9State = 0
+    
 
+
+    //Turn = 1 ; Player 1 turn
+    //Turn = 2 ; Player 2 turn
+    var turn = 1
     override func viewDidLoad()
     {
        
@@ -54,134 +60,159 @@ class ViewController: UIViewController
       
 
     }
-    //Box 1 Tapped
-    @IBAction func onBox1Tapped(sender: AnyObject)
+   
+    func SwitchTurnTo1()
     {
-        if box1State == 0
+        turn = 1
+    }
+    func SwitchTurnTo2()
+    {
+        turn = 2
+    }
+    func SwitchTurn()
+    {
+    
+    }
+    
+    
+    //Box 1 Tapped
+   @IBAction func onBox1Tapped(sender: AnyObject)
+    {
+        
+        if turn == 1
         {
+                let defaultImage = UIImage(named: "X")
+                box1.setImage(defaultImage, forState: .Normal)
+                box1State = 1
+                victoryCheck()
+                SwitchTurnTo2()
             
-            let defaultImage = UIImage(named: "Empty")
-            box1.setImage(defaultImage, forState: .Normal)  //Empty image
-            box1State = 1
+            
         }
-        else if box1State == 1
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box1.setImage(image, forState: .Normal)     //O Image
-            box1State = 2
-            victoryCheck()
-        }
-        else if box1State == 2
-        {
-            let image = UIImage(named: "X")
-            box1.setImage(image, forState: .Normal) //X Image
-            box1State = 1
-            victoryCheck()
+        else if turn == 2
+            {
+                if box1State == 1
+                {
+                    let image = UIImage(named: "Cyrillic-O")
+                    box1.setImage(image, forState: .Normal)     //O Image
+                    box1State = 2
+                    victoryCheck()
+                    SwitchTurnTo1()
+                }
+
+            
         }
         print("Box 1 Tapped")
     }
     @IBAction func onBox2Tapped(sender: AnyObject)
     {
         
-        if box2State == 0
-        {
-            let defaultImage = UIImage(named: "Empty")
-            box2.setImage(defaultImage, forState: .Normal)
-            box2State = 1
+        if turn == 1
+            {
+                let defaultImage = UIImage(named: "X")
+                box2.setImage(defaultImage, forState: .Normal)
+                box2State = 1
+                victoryCheck()
+                SwitchTurnTo2()
+                
+                
         }
-        else if box2State == 1
+        else if turn == 2
         {
-            let image = UIImage(named: "Cyrillic-O")
-            box2.setImage(image, forState: .Normal)
-            box2State = 2
-            victoryCheck()
+           
+                let image = UIImage(named: "Cyrillic-O")
+                box2.setImage(image, forState: .Normal)     //O Image
+                box2State = 2
+                victoryCheck()
+               SwitchTurnTo1()
+            
         }
-        else if box2State == 2
-        {
-            let image = UIImage(named: "X")
-            box2.setImage(image, forState: .Normal)
-            box2State = 1
-            victoryCheck()
-        }
-        print("Box 2 Tapped")
+
+                print("Box 2 Tapped")
 
     }
     
     @IBAction func onBox3Tapped(sender: AnyObject)
     {
-        if box3State == 0
+        if turn == 1
         {
-            let defaultImage = UIImage(named: "Empty")
+            let defaultImage = UIImage(named: "X")
             box3.setImage(defaultImage, forState: .Normal)
             box3State = 1
-        }
-        else if box3State == 1
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box3.setImage(image, forState: .Normal)
-            box3State = 2
             victoryCheck()
+            SwitchTurnTo2()
+            
+            
         }
-        else if box3State == 2
+        else if turn == 2
         {
-            let image = UIImage(named: "X")
-            box3.setImage(image, forState: .Normal)
-            box3State = 1
-            victoryCheck()
+           
+                let image = UIImage(named: "Cyrillic-O")
+                box3.setImage(image, forState: .Normal)     //O Image
+                box3State = 2
+                victoryCheck()
+                SwitchTurnTo1()
+            
+           
         }
         print("Box 3 Tapped")
-
     }
     
     @IBAction func onBox4Tapped(sender: AnyObject)
     {
 
-        if box4State == 0
+        if turn == 1
         {
-            let defaultImage = UIImage(named: "Empty")
+            let defaultImage = UIImage(named: "X")
             box4.setImage(defaultImage, forState: .Normal)
             box4State = 1
-        }
-        else if box4State == 1
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box4.setImage(image, forState: .Normal)
-            box4State = 2
             victoryCheck()
+            SwitchTurnTo2()
+            
+            
         }
-        else if box4State == 2
+        else if turn == 2
         {
-            let image = UIImage(named: "X")
-            box4.setImage(image, forState: .Normal)
-            box4State = 1
-            victoryCheck()
+            if box1State == 1
+            {
+                let image = UIImage(named: "Cyrillic-O")
+                box4.setImage(image, forState: .Normal)     //O Image
+                box4State = 2
+                victoryCheck()
+                SwitchTurnTo1()
+            }
+            
         }
+    
         print("Box 4 Tapped")
-
-
     }
+
+
+    
    
     @IBAction func onBox5Tapped(sender: AnyObject)
     {
-        if box5State == 0
-        {
-            let defaultImage = UIImage(named: "Empty")
-            box5.setImage(defaultImage, forState: .Normal)
-            box5State = 1
-        }
-        else if box5State == 1
+        if turn == 1
+    {
+        let defaultImage = UIImage(named: "X")
+        box5.setImage(defaultImage, forState: .Normal)
+        box5State = 1
+        victoryCheck()
+        SwitchTurnTo2()
+        
+        
+    }
+    else if turn == 2
+    {
+        if box5State == 1
         {
             let image = UIImage(named: "Cyrillic-O")
-            box5.setImage(image, forState: .Normal)
+            box5.setImage(image, forState: .Normal)     //O Image
             box5State = 2
             victoryCheck()
+            SwitchTurnTo1()
         }
-        else if box5State == 2
-        {
-            let image = UIImage(named: "X")
-            box5.setImage(image, forState: .Normal)
-            box5State = 1
-            victoryCheck()
+        
         }
         print("Box 5 Tapped")
 
@@ -190,25 +221,27 @@ class ViewController: UIViewController
     @IBAction func onBox6Tapped(sender: AnyObject)
     {
         
-        if box6State == 0
+        if turn == 1
         {
-            let defaultImage = UIImage(named: "Empty")
+            let defaultImage = UIImage(named: "X")
             box6.setImage(defaultImage, forState: .Normal)
             box6State = 1
-        }
-        else if box6State == 1
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box6.setImage(image, forState: .Normal)
-            box6State = 2
             victoryCheck()
+            SwitchTurnTo2()
+            
+            
         }
-        else if box6State == 2
+        else if turn == 2
         {
-            let image = UIImage(named: "X")
-            box6.setImage(image, forState: .Normal)
-            box6State = 1
-            victoryCheck()
+            if box6State == 1
+            {
+                let image = UIImage(named: "Cyrillic-O")
+                box6.setImage(image, forState: .Normal)     //O Image
+                box6State = 2
+                victoryCheck()
+                SwitchTurnTo1()
+            }
+            
         }
         print("Box 6 Tapped")
 
@@ -216,25 +249,27 @@ class ViewController: UIViewController
    
     @IBAction func onBox7Tapped(sender: AnyObject)
     {
-        if box7State == 0
+        if turn == 1
         {
-            let defaultImage = UIImage(named: "Empty")
+            let defaultImage = UIImage(named: "X")
             box7.setImage(defaultImage, forState: .Normal)
             box7State = 1
-        }
-        else if box7State == 1
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box7.setImage(image, forState: .Normal)
-            box7State = 2
             victoryCheck()
+            SwitchTurnTo2()
+            
+            
         }
-        else if box7State == 2
+        else if turn == 2
         {
-            let image = UIImage(named: "X")
-            box7.setImage(image, forState: .Normal)
-            box7State = 1
-            victoryCheck()
+            if box7State == 1
+            {
+                let image = UIImage(named: "Cyrillic-O")
+                box7.setImage(image, forState: .Normal)     //O Image
+                box7State = 2
+                victoryCheck()
+                SwitchTurnTo1()
+            }
+            
         }
         print("Box 7 Tapped")
 
@@ -243,25 +278,27 @@ class ViewController: UIViewController
     
     @IBAction func onBox8Tapped(sender: AnyObject)
     {
-        if box8State == 0
+        if turn == 1
         {
-            let defaultImage = UIImage(named: "Empty")
+            let defaultImage = UIImage(named: "X")
             box8.setImage(defaultImage, forState: .Normal)
             box8State = 1
-        }
-        else if box8State == 1
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box8.setImage(image, forState: .Normal)
-            box8State = 2
             victoryCheck()
+            SwitchTurnTo2()
+            
+            
         }
-        else if box8State == 2
+        else if turn == 2
         {
-            let image = UIImage(named: "X")
-            box8.setImage(image, forState: .Normal)
-            box8State = 1
-            victoryCheck()
+            if box8State == 1
+            {
+                let image = UIImage(named: "Cyrillic-O")
+                box8.setImage(image, forState: .Normal)     //O Image
+                box8State = 2
+                victoryCheck()
+                SwitchTurnTo1()
+            }
+            
         }
         print("Box 8 Tapped")
 
@@ -269,25 +306,27 @@ class ViewController: UIViewController
     
     @IBAction func onBox9Tapped(sender: AnyObject)
     {
-        if box9State == 0
+        if turn == 1
         {
-            let defaultImage = UIImage(named: "Empty")
+            let defaultImage = UIImage(named: "X")
             box9.setImage(defaultImage, forState: .Normal)
-            box9State = 1
-        }
-        else if box8State == 1
-        {
-            let image = UIImage(named: "Cyrillic-O")
-            box9.setImage(image, forState: .Normal)
-            box9State = 2
+            box4State = 1
             victoryCheck()
+            SwitchTurnTo2()
+            
+            
         }
-        else if box9State == 2
+        else if turn == 2
         {
-            let image = UIImage(named: "X")
-            box9.setImage(image, forState: .Normal)
-            box9State = 1
-            victoryCheck()
+            if box9State == 1
+            {
+                let image = UIImage(named: "Cyrillic-O")
+                box9.setImage(image, forState: .Normal)     //O Image
+                box9State = 2
+                victoryCheck()
+                SwitchTurnTo1()
+            }
+            
         }
         print("Box 9 Tapped")
 
@@ -301,48 +340,334 @@ class ViewController: UIViewController
    
     func victoryCheck()
     {
-
-        if box1State == 1 && box2State == 1 && box3State == 1
+        if turn == 1
         {
-            let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
-                {
-                    (action) -> Void in
-                    print("Cancel button pressed")
-                    
-            })
-            let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
-                {
-                    (action) -> Void in
-                    print("OK Button Pressed")
-                    
-            })
-            alertController1.addAction(cancelAction)
-            alertController1.addAction(OKAction)
-            self.presentViewController(alertController1, animated: true, completion: nil)
-            let defaultImage = UIImage(named: "Empty")
-            box1.setImage(defaultImage, forState: .Normal)
-            box2.setImage(defaultImage, forState: .Normal)
-            box3.setImage(defaultImage, forState: .Normal)
-            box4.setImage(defaultImage, forState: .Normal)
-            box5.setImage(defaultImage, forState: .Normal)
-            box6.setImage(defaultImage, forState: .Normal)
-            box7.setImage(defaultImage, forState: .Normal)
-            box8.setImage(defaultImage, forState: .Normal)
-            box9.setImage(defaultImage, forState: .Normal)
-            box1State = 0
-            box2State = 0
-            box3State = 0
-            box4State = 0
-            box5State = 0
-            box6State = 0
-            box7State = 0
-            box8State = 0
-            box9State = 0
-            
+            if box1State == 1 && box2State == 1 && box3State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+            }
+            else if box4State == 1 && box5State == 1 && box6State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+                
+            }
+            else if box7State == 1 && box8State == 1 && box9State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+                
+            }
+            else if box1State == 1 && box5State == 1 && box9State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+            }
+            else if box3State == 1 && box5State == 1 && box7State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+            }
+            else if box1State == 1 && box4State == 1 && box7State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+            }
+            else if box2State == 1 && box5State == 1 && box8State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+            }
+            else if box3State == 1 && box6State == 1 && box9State == 1
+            {
+                let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                    {
+                        (action) -> Void in
+                        print("Cancel button pressed")
+                        
+                })
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                    {
+                        (action) -> Void in
+                        print("OK Button Pressed")
+                        
+                })
+                alertController1.addAction(cancelAction)
+                alertController1.addAction(OKAction)
+                self.presentViewController(alertController1, animated: true, completion: nil)
+                let defaultImage = UIImage(named: "Empty")
+                box1.setImage(defaultImage, forState: .Normal)
+                box2.setImage(defaultImage, forState: .Normal)
+                box3.setImage(defaultImage, forState: .Normal)
+                box4.setImage(defaultImage, forState: .Normal)
+                box5.setImage(defaultImage, forState: .Normal)
+                box6.setImage(defaultImage, forState: .Normal)
+                box7.setImage(defaultImage, forState: .Normal)
+                box8.setImage(defaultImage, forState: .Normal)
+                box9.setImage(defaultImage, forState: .Normal)
+                box1State = 0
+                box2State = 0
+                box3State = 0
+                box4State = 0
+                box5State = 0
+                box6State = 0
+                box7State = 0
+                box8State = 0
+                box9State = 0
+                
+            }
+
+
+
+
+
+
+
         }
+        else if turn == 2
+        {
             
-        else if box1State == 2 && box2State == 2 && box3State == 2
+            if box1State == 2 && box2State == 2 && box3State == 2
             {
                 let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
                 let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
@@ -382,46 +707,6 @@ class ViewController: UIViewController
                 box9State = 0
                 
             }
-        else if box4State == 1 && box5State == 1 && box6State == 1
-                {
-                    let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
-                        {
-                            (action) -> Void in
-                            print("Cancel button pressed")
-                            
-                    })
-                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
-                        {
-                            (action) -> Void in
-                            print("OK Button Pressed")
-                            
-                    })
-                    alertController1.addAction(cancelAction)
-                    alertController1.addAction(OKAction)
-                    self.presentViewController(alertController1, animated: true, completion: nil)
-                    let defaultImage = UIImage(named: "Empty")
-                    box1.setImage(defaultImage, forState: .Normal)
-                    box2.setImage(defaultImage, forState: .Normal)
-                    box3.setImage(defaultImage, forState: .Normal)
-                    box4.setImage(defaultImage, forState: .Normal)
-                    box5.setImage(defaultImage, forState: .Normal)
-                    box6.setImage(defaultImage, forState: .Normal)
-                    box7.setImage(defaultImage, forState: .Normal)
-                    box8.setImage(defaultImage, forState: .Normal)
-                    box9.setImage(defaultImage, forState: .Normal)
-                    box1State = 0
-                    box2State = 0
-                    box3State = 0
-                    box4State = 0
-                    box5State = 0
-                    box6State = 0
-                    box7State = 0
-                    box8State = 0
-                    box9State = 0
-            
-            
-                }
         else if box4State == 2 && box5State == 2 && box6State == 2
         {
             let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
@@ -462,47 +747,7 @@ class ViewController: UIViewController
             
             
         }
-        else if box7State == 1 && box8State == 1 && box9State == 1
-        {
-            let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
-                {
-                    (action) -> Void in
-                    print("Cancel button pressed")
-                    
-            })
-            let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
-                {
-                    (action) -> Void in
-                    print("OK Button Pressed")
-                    
-            })
-            alertController1.addAction(cancelAction)
-            alertController1.addAction(OKAction)
-            self.presentViewController(alertController1, animated: true, completion: nil)
-            let defaultImage = UIImage(named: "Empty")
-            box1.setImage(defaultImage, forState: .Normal)
-            box2.setImage(defaultImage, forState: .Normal)
-            box3.setImage(defaultImage, forState: .Normal)
-            box4.setImage(defaultImage, forState: .Normal)
-            box5.setImage(defaultImage, forState: .Normal)
-            box6.setImage(defaultImage, forState: .Normal)
-            box7.setImage(defaultImage, forState: .Normal)
-            box8.setImage(defaultImage, forState: .Normal)
-            box9.setImage(defaultImage, forState: .Normal)
-            box1State = 0
-            box2State = 0
-            box3State = 0
-            box4State = 0
-            box5State = 0
-            box6State = 0
-            box7State = 0
-            box8State = 0
-            box9State = 0
-            
-            
-        }
-        else if box7State == 2 && box8State == 2 && box9State == 2
+                else if box7State == 2 && box8State == 2 && box9State == 2
         {
             let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
@@ -542,46 +787,7 @@ class ViewController: UIViewController
             
             
         }
-        else if box1State == 1 && box5State == 1 && box9State == 1
-        {
-            let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
-                {
-                    (action) -> Void in
-                    print("Cancel button pressed")
-                    
-            })
-            let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
-                {
-                    (action) -> Void in
-                    print("OK Button Pressed")
-                    
-            })
-            alertController1.addAction(cancelAction)
-            alertController1.addAction(OKAction)
-            self.presentViewController(alertController1, animated: true, completion: nil)
-            let defaultImage = UIImage(named: "Empty")
-            box1.setImage(defaultImage, forState: .Normal)
-            box2.setImage(defaultImage, forState: .Normal)
-            box3.setImage(defaultImage, forState: .Normal)
-            box4.setImage(defaultImage, forState: .Normal)
-            box5.setImage(defaultImage, forState: .Normal)
-            box6.setImage(defaultImage, forState: .Normal)
-            box7.setImage(defaultImage, forState: .Normal)
-            box8.setImage(defaultImage, forState: .Normal)
-            box9.setImage(defaultImage, forState: .Normal)
-            box1State = 0
-            box2State = 0
-            box3State = 0
-            box4State = 0
-            box5State = 0
-            box6State = 0
-            box7State = 0
-            box8State = 0
-            box9State = 0
-            
-        }
-        else if box1State == 2 && box5State == 2 && box9State == 2
+                else if box1State == 2 && box5State == 2 && box9State == 2
         {
             let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
@@ -620,9 +826,9 @@ class ViewController: UIViewController
             box9State = 0
             
         }
-        else if box3State == 1 && box5State == 1 && box7State == 2
+               else if box3State == 2 && box5State == 2 && box7State == 2
         {
-            let alertController1 = UIAlertController(title: "Player 1 Wins!", message: "", preferredStyle: .Alert)
+            let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
                 {
                     (action) -> Void in
@@ -659,6 +865,133 @@ class ViewController: UIViewController
             box9State = 0
             
         }
+                else if box1State == 2 && box4State == 2 && box7State == 2
+        {
+            let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                {
+                    (action) -> Void in
+                    print("Cancel button pressed")
+                    
+            })
+            let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                {
+                    (action) -> Void in
+                    print("OK Button Pressed")
+                    
+            })
+            alertController1.addAction(cancelAction)
+            alertController1.addAction(OKAction)
+            self.presentViewController(alertController1, animated: true, completion: nil)
+            let defaultImage = UIImage(named: "Empty")
+            box1.setImage(defaultImage, forState: .Normal)
+            box2.setImage(defaultImage, forState: .Normal)
+            box3.setImage(defaultImage, forState: .Normal)
+            box4.setImage(defaultImage, forState: .Normal)
+            box5.setImage(defaultImage, forState: .Normal)
+            box6.setImage(defaultImage, forState: .Normal)
+            box7.setImage(defaultImage, forState: .Normal)
+            box8.setImage(defaultImage, forState: .Normal)
+            box9.setImage(defaultImage, forState: .Normal)
+            box1State = 0
+            box2State = 0
+            box3State = 0
+            box4State = 0
+            box5State = 0
+            box6State = 0
+            box7State = 0
+            box8State = 0
+            box9State = 0
+            
+        }
+               else if box2State == 2 && box5State == 2 && box8State == 2
+        {
+            let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                {
+                    (action) -> Void in
+                    print("Cancel button pressed")
+                    
+            })
+            let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                {
+                    (action) -> Void in
+                    print("OK Button Pressed")
+                    
+            })
+            alertController1.addAction(cancelAction)
+            alertController1.addAction(OKAction)
+            self.presentViewController(alertController1, animated: true, completion: nil)
+            let defaultImage = UIImage(named: "Empty")
+            box1.setImage(defaultImage, forState: .Normal)
+            box2.setImage(defaultImage, forState: .Normal)
+            box3.setImage(defaultImage, forState: .Normal)
+            box4.setImage(defaultImage, forState: .Normal)
+            box5.setImage(defaultImage, forState: .Normal)
+            box6.setImage(defaultImage, forState: .Normal)
+            box7.setImage(defaultImage, forState: .Normal)
+            box8.setImage(defaultImage, forState: .Normal)
+            box9.setImage(defaultImage, forState: .Normal)
+            box1State = 0
+            box2State = 0
+            box3State = 0
+            box4State = 0
+            box5State = 0
+            box6State = 0
+            box7State = 0
+            box8State = 0
+            box9State = 0
+            
+        }
+                else if box3State == 2 && box6State == 2 && box9State == 2
+        {
+            let alertController1 = UIAlertController(title: "Player 2 Wins!", message: "", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler:
+                {
+                    (action) -> Void in
+                    print("Cancel button pressed")
+                    
+            })
+            let OKAction = UIAlertAction(title: "OK", style: .Default, handler:
+                {
+                    (action) -> Void in
+                    print("OK Button Pressed")
+                    
+            })
+            alertController1.addAction(cancelAction)
+            alertController1.addAction(OKAction)
+            self.presentViewController(alertController1, animated: true, completion: nil)
+            let defaultImage = UIImage(named: "Empty")
+            box1.setImage(defaultImage, forState: .Normal)
+            box2.setImage(defaultImage, forState: .Normal)
+            box3.setImage(defaultImage, forState: .Normal)
+            box4.setImage(defaultImage, forState: .Normal)
+            box5.setImage(defaultImage, forState: .Normal)
+            box6.setImage(defaultImage, forState: .Normal)
+            box7.setImage(defaultImage, forState: .Normal)
+            box8.setImage(defaultImage, forState: .Normal)
+            box9.setImage(defaultImage, forState: .Normal)
+            box1State = 0
+            box2State = 0
+            box3State = 0
+            box4State = 0
+            box5State = 0
+            box6State = 0
+            box7State = 0
+            box8State = 0
+            box9State = 0
+            
+            }
+        }
+        
+
+
+
+
+
+
+
+
         
 
 
